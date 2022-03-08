@@ -51,6 +51,7 @@ $config_file = "#{ENV['HOME']}/.sdkman/etc/config"
 $backup_config_file = nil
 def _restore_config # called in After hook
   unless $backup_config_file.nil?
+    log "Restoring #{$config_file} from #{$backup_config_file}"
     FileUtils.mv($backup_config_file, $config_file)
     $backup_config_file = nil
   end

@@ -52,8 +52,6 @@ Feature: Support autoenv setting
             1.10.1
             """
 
-    # TODO: This one doesn't work due to a bug in sdkman. Track: https://github.com/sdkman/sdkman-cli/pull/878
-    @pending
     Scenario: Switching between directories with .sdkmanrc
         Given SDKMAN! config sets sdkman_auto_env to true
         And   file /tmp/autoenv-test-1/.sdkmanrc exists with content

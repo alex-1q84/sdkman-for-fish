@@ -1,7 +1,9 @@
 require_relative '../step_definitions/setup'
+require_relative '../step_definitions/corner_cases.rb'
 
 After do |scenario|
   _restore_config
+  _restore_install
 end
 
 # Uninstall all SDKMAN! candidates

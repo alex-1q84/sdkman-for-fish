@@ -37,7 +37,7 @@ jobs:
       - name: Install SDKMAN!
         run: |
           curl -s "https://get.sdkman.io" | bash
-          source "$HOME/.sdkman/bin/sdkman-init.sh"
+          source "$SDKMAN_DIR/bin/sdkman-init.sh"
           sdk version
 
       - name: Install fish

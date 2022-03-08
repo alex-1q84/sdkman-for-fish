@@ -26,6 +26,11 @@ _Note:_
 
  - Only compatible with fisher v4 upwards; v3 is no longer supported.
  - You have to install [SDKMAN!] separately.
+ - If you install SDKMAN! in a custom location, you need to add
+   ```fish
+   set -gx SDKMAN_CUSTOM_DIR /your/path/to/sdkman
+   ```
+   to `.config/fish/config.fish`.
 
 ## Usage
 
