@@ -64,6 +64,13 @@ function __fish_sdkman_run_in_bash
             end
 
             if test -n value
+                if test "PATH" = "$var"
+                    set -gx PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin
+                    for p in $value
+                        # make sure sdkman installed bin in front of the system default PATH
+                        fish_add_path $p
+                    end
+                end
                 set -gx $var $value
                 # Note: This makes SDKMAN_OFFLINE_MODE an environment variable.
                 #       That gives it the behaviour we _want_!
@@ -81,4 +88,3 @@ if not set -q SDKMAN_DIR; or test (ls -ld "$SDKMAN_DIR" | awk '{print $3}') != (
     set -e SDKMAN_DIR
     __fish_sdkman_run_in_bash "source $__fish_sdkman_init"
 end
-
